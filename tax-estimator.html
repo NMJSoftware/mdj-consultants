@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal tax estimator | MDJ Consultants</title>
+    <meta name="description" content="Estimate income tax, National Insurance, capital gains tax and student loan repayments for England, Wales and Northern Ireland. Covers rental income, losses, marriage allowance and the Child Benefit charge. Figures stay in your browser.">
+    <link rel="canonical" href="https://www.mdjconsultantsltd.co.uk/tax-estimator.html">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="wordmark-group">
+            <img src="logo.png" alt="" />
+            <span class="wordmark">MDJ Consultants Ltd</span>
+        </a>
+
+        <div class="nav-links" id="site-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="accountancy-services.html">Accountancy</a>
+            <a href="hmrc-investigations.html">HMRC enquiries</a>
+            <a href="importer-mrn-audits.html">Importer audits</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <a href="contact.html" class="btn nav-cta" style="padding: 10px 22px; font-size: 14px;">Book a free call</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    </nav>
+
+    <section class="hero hero-lp" style="padding-bottom: 24px;">
+        <div class="hero-content">
+            <div class="eyebrow">Free tool</div>
+            <h1>Personal tax estimator</h1>
+            <p class="hero-sub" style="margin-bottom: 0;">Estimate your income tax, National Insurance, capital gains tax and student loan repayments for the year. Your figures stay in your browser and are not sent to us.</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 32px;">
+        <noscript><div class="notice" style="margin-top: 0;"><h3>JavaScript is needed</h3><p>The estimator runs in your browser. Please enable JavaScript, or <a href="contact.html">ask us</a> for an estimate.</p></div></noscript>
+
+        <div class="estimator" data-estimator>
+            <form class="form-panel estimator-form" data-estimator-form novalidate>
+                <div class="field">
+                    <label for="taxYear">Tax year</label>
+                    <select id="taxYear" name="taxYear" data-tax-year></select>
+                </div>
+                <p class="field-hint" style="margin: -8px 0 24px;">For taxpayers in England, Wales and Northern Ireland. Scottish income tax rates are different; <a href="contact.html">ask us</a> for a Scottish estimate.</p>
+
+                <fieldset>
+                    <legend>Income for the year</legend>
+                    <div class="field">
+                        <label for="employment">Employment income</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="employment" name="employment" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Salary, bonuses and taxable benefits, after any pension deducted from your pay before tax.</p>
+                    </div>
+                    <div class="field">
+                        <label for="selfEmployment">Self-employment profit</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="selfEmployment" name="selfEmployment" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Taxable profit from your trade, after allowable expenses.</p>
+                    </div>
+                    <div class="field">
+                        <label for="rental">Rental profit</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="rental" name="rental" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Rents less allowable expenses, before mortgage interest. Rents of £1,000 or less are usually covered by the property allowance.</p>
+                    </div>
+                    <div class="field">
+                        <label for="financeCosts">Mortgage interest on lettings</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="financeCosts" name="financeCosts" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Mortgage interest and other finance costs on residential lets. You get relief at 20% as a tax reduction.</p>
+                    </div>
+                    <div class="field">
+                        <label for="savings">Savings interest</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="savings" name="savings" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Interest outside ISAs.</p>
+                    </div>
+                    <div class="field">
+                        <label for="dividends">Dividends</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="dividends" name="dividends" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Dividends outside ISAs, including from your own company.</p>
+                    </div>
+                    <div class="field">
+                        <label for="gains">Capital gains</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="gains" name="gains" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Total gains for the year after allowable losses, before the £3,000 annual exempt amount.</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Reliefs</legend>
+                    <div class="field">
+                        <label for="pensionContributions">Personal pension contributions (gross)</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="pensionContributions" name="pensionContributions" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">What you paid plus the basic rate relief your provider claims, e.g. £8,000 paid counts as £10,000.</p>
+                    </div>
+                    <div class="field">
+                        <label for="giftAid">Gift Aid donations (gross)</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="giftAid" name="giftAid" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">What you gave plus the basic rate tax, e.g. £80 given counts as £100.</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Trading losses</legend>
+                    <div class="field">
+                        <label for="lossesBroughtForward">Losses brought forward</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="lossesBroughtForward" name="lossesBroughtForward" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">Unused losses from earlier years of the same trade. They come off this year's self-employment profit.</p>
+                    </div>
+                    <div class="field">
+                        <label for="tradingLoss">Trading loss this year</label>
+                        <div class="money"><span aria-hidden="true">£</span><input id="tradingLoss" name="tradingLoss" type="text" inputmode="decimal" autocomplete="off"></div>
+                        <p class="field-hint">If your self-employment made a loss this year, it is set against your other income for the year.</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Family and student loans</legend>
+                    <div class="field">
+                        <label for="marriage">Marriage allowance</label>
+                        <select id="marriage" name="marriage">
+                            <option value="none">Not claiming</option>
+                            <option value="transfer">I transfer £1,260 of my allowance to my partner</option>
+                            <option value="receive">My partner transfers £1,260 to me</option>
+                        </select>
+                        <p class="field-hint">For married couples and civil partners where neither pays tax above the basic rate.</p>
+                    </div>
+                    <div class="field">
+                        <label for="children">Children getting Child Benefit</label>
+                        <input id="children" name="children" type="text" inputmode="numeric" autocomplete="off" style="max-width: 120px;">
+                        <p class="field-hint">For the High Income Child Benefit Charge. It's paid by the partner with the higher income, so leave this blank if that's your partner.</p>
+                    </div>
+                    <div class="field">
+                        <label for="studentPlan">Student loan</label>
+                        <select id="studentPlan" name="studentPlan">
+                            <option value="none">None</option>
+                            <option value="plan1">Plan 1</option>
+                            <option value="plan2">Plan 2</option>
+                            <option value="plan4">Plan 4 (Scotland)</option>
+                            <option value="plan5">Plan 5</option>
+                        </select>
+                        <p class="field-hint">Your plan type is shown in your Student Loans Company account.</p>
+                    </div>
+                    <label class="check"><input type="checkbox" id="postgradLoan" name="postgradLoan"> I have a postgraduate loan</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>National Insurance</legend>
+                    <label class="check"><input type="checkbox" id="overSpa" name="overSpa"> I'm over State Pension age for the whole year</label>
+                    <label class="check" data-class2-row hidden><input type="checkbox" id="class2" name="class2"> Pay voluntary Class 2 to protect my State Pension record</label>
+                </fieldset>
+            </form>
+
+            <div class="estimator-results" aria-live="polite" data-estimator-results>
+                <div class="result-headline">
+                    <span class="result-label" data-out="headline">Estimated income tax and NI</span>
+                    <span class="result-total" data-out="totalTax">£0.00</span>
+                    <span class="result-sub"><span data-out="effectiveRate">0%</span> <span data-out="rateBasis">of your income</span></span>
+                </div>
+
+                <dl class="result-grid">
+                    <div><dt data-out="netLabel">After income tax and NI</dt><dd data-out="netIncome">£0.00</dd></div>
+                    <div><dt data-out="incomeLabel">Total income</dt><dd data-out="totalIncome">£0.00</dd></div>
+                </dl>
+
+                <table class="breakdown">
+                    <caption>Breakdown</caption>
+                    <tbody data-breakdown></tbody>
+                    <tfoot><tr><th scope="row">Total</th><td data-out="totalTaxFoot">£0.00</td></tr></tfoot>
+                </table>
+
+                <details class="workings">
+                    <summary>How it's worked out</summary>
+                    <table class="work-table" data-workings></table>
+                </details>
+
+                <div data-notices></div>
+                <p class="result-error" data-error hidden></p>
+
+                <div class="estimator-cta">
+                    <p>An estimate is a starting point. We can review the detail, spot missing reliefs and look at how you take income from your company.</p>
+                    <div class="estimator-actions">
+                        <a href="contact.html" class="btn">Get this checked by us</a>
+                        <button type="button" class="btn btn-ghost" data-print>Print estimate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-raise); border-top: 1px solid var(--border);">
+        <div class="split">
+            <div>
+                <div class="section-header" style="margin-bottom: 24px;">
+                    <h2>What this estimate covers</h2>
+                    <p>It applies the rates and allowances for the year you choose, in the order HMRC applies them: earnings and rent first, then savings, then dividends, then capital gains.</p>
+                </div>
+                <ul class="checklist">
+                    <li>Personal allowance, including the taper above £100,000, and marriage allowance</li>
+                    <li>Rental profit, with 20% relief for mortgage interest</li>
+                    <li>Starting rate for savings, personal savings allowance and dividend allowance</li>
+                    <li>Capital gains tax at 18% and 24% after the £3,000 annual exempt amount</li>
+                    <li>Trading losses brought forward, and this year's loss set against other income</li>
+                    <li>High Income Child Benefit Charge</li>
+                    <li>Class 1 employee NI, Class 4 and voluntary Class 2</li>
+                    <li>Student loan and postgraduate loan repayments</li>
+                    <li>Basic rate band extended for pension contributions and Gift Aid</li>
+                </ul>
+            </div>
+            <div>
+                <div class="notice" style="margin-top: 0;">
+                    <h3>What it leaves out</h3>
+                    <p>Scottish income tax, Business Asset Disposal Relief and other capital gains reliefs, property losses, carrying trading losses back, and other reliefs. Employee NI and student loan repayments through payroll are worked out each pay period, so the actual figures can differ slightly from this annual estimate.</p>
+                </div>
+                <div class="notice">
+                    <h3>Not advice</h3>
+                    <p>This is an estimate for guidance only. It is not tax advice and should not be relied on for filing or planning decisions without speaking to an adviser.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h4>MDJ Consultants Ltd</h4>
+                <p>Financial oversight and advisory for UK SMEs. Accounts, tax, VAT and payroll, plus specialist support when HMRC gets in touch.</p>
+                <p style="margin-top: 14px; color: var(--text-dim); letter-spacing: 0.04em;">Clarity. Control. Confidence.</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="accountancy-services.html">Accountancy &amp; compliance</a></li>
+                    <li><a href="hmrc-investigations.html">HMRC enquiries</a></li>
+                    <li><a href="importer-mrn-audits.html">Importer MRN audits</a></li>
+                    <li><a href="tax-estimator.html">Personal tax estimator</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:info@mdjconsultantsltd.co.uk">info@mdjconsultantsltd.co.uk</a></li>
+                    <li><a href="tel:+447713697615">07713 697615</a></li>
+                    <li>Canal View, 8B Slate Lane<br />Audenshaw, Manchester M34 5GW</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-legal">
+            © <span data-year>2026</span> MDJ Consultants Ltd. Registered in England &amp; Wales, company number 15110513.
+            · <a href="privacy.html">Privacy policy</a>
+        </div>
+    </footer>
+
+    <article class="print-report" data-print-report>
+        <header class="print-head">
+            <div>
+                <p class="print-brand">MDJ Consultants Ltd</p>
+                <h1>Personal tax estimate</h1>
+                <p class="print-meta" data-print-meta></p>
+            </div>
+            <img class="print-logo" src="logo.png" alt="">
+        </header>
+
+        <section class="print-summary">
+            <div class="print-hero">
+                <p class="print-label" data-print-label>Estimated income tax and National Insurance</p>
+                <p class="print-total" data-print-total></p>
+            </div>
+            <dl class="print-stats">
+                <div><dt data-print-stat-label="totalIncome">Total income</dt><dd data-print-stat="totalIncome"></dd></div>
+                <div><dt>After deductions</dt><dd data-print-stat="netIncome"></dd></div>
+                <div><dt>Effective rate</dt><dd data-print-stat="effectiveRate"></dd></div>
+            </dl>
+        </section>
+
+        <div class="print-columns">
+            <section>
+                <h2>Your figures</h2>
+                <table class="print-table" data-print-inputs></table>
+            </section>
+            <section>
+                <h2>Tax and National Insurance</h2>
+                <table class="print-table" data-print-breakdown></table>
+            </section>
+        </div>
+
+        <section class="print-workings">
+            <h2>How it's worked out</h2>
+            <dl class="print-facts" data-print-facts></dl>
+            <table class="print-table print-work" data-print-workings></table>
+        </section>
+
+        <section class="print-notes" data-print-notes-wrap>
+            <h2>Notes</h2>
+            <ul data-print-notes></ul>
+        </section>
+
+        <footer class="print-foot">
+            <p>For taxpayers in England, Wales and Northern Ireland. This estimate leaves out Scottish income tax, Business Asset Disposal Relief and other capital gains reliefs, property losses, carrying trading losses back, and other reliefs. Employee National Insurance and payroll student loan repayments are worked out on annual figures, so payslips can differ slightly.</p>
+            <p>This is an estimate for guidance only. It is not tax advice and should not be relied on for filing or planning decisions without speaking to an adviser.</p>
+            <p class="print-contact">MDJ Consultants Ltd <span>·</span> info@mdjconsultantsltd.co.uk <span>·</span> 07713 697615</p>
+        </footer>
+    </article>
+
+    <script src="tax-estimator.js"></script>
+<script src="site.js" defer></script>
+</body>
+</html>
